@@ -3405,6 +3405,7 @@
 #include "ModularTegustation\tegu_clothes_code\shoes_tegu.dm"
 #include "ModularTegustation\tegu_clothes_code\tegu_clothing.dm"
 #include "ModularTegustation\tegu_clothes_code\wintercoats.dm"
+#include "ModularTegustation\tegu_cool_walls\34swallsgoon.dm"
 #include "ModularTegustation\tegu_digitigrade\digi_lizard_tegu.dm"
 #include "ModularTegustation\tegu_digitigrade\lizardpeople_tegu.dm"
 #include "ModularTegustation\tegu_disco_elysium\tegu_disco_elysium.dm"

@@ -142,7 +142,7 @@
 
 	RegisterSignal(src, COMSIG_MACHINERY_BROKEN, .proc/on_break)
 	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, .proc/ntnet_receive)
-
+	set_smooth_dir() //TEGU EDIT really cool doors
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/door/airlock/LateInitialize()
