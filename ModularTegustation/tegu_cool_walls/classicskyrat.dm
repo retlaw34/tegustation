@@ -1,3 +1,4 @@
+/*
 // Ah yes, skyrat. A infamous server with a history of enterprise resource planning. But I don't care about that, if you ignore that they have some sick sprites.
 //These use the "classic" perspective, which is used by openss13.atom
 //soul level: very low
@@ -218,3 +219,4 @@
 	if(map_config/artstyle == "skyrat")
 		playsound(loc, door_close_sound, 90, TRUE)
 		. = ..()
+*/

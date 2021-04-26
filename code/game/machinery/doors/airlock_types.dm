@@ -309,7 +309,7 @@
 
 /obj/machinery/door/airlock/public
 	icon = 'icons/obj/doors/airlocks/station2/glass.dmi'
-	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi'
+//	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi' tegu edit- nah
 	assemblytype = /obj/structure/door_assembly/door_assembly_public
 
 /obj/machinery/door/airlock/public/glass
