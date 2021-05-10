@@ -3407,6 +3407,7 @@
 #include "ModularTegustation\tegu_clothes_code\tegu_clothing.dm"
 #include "ModularTegustation\tegu_clothes_code\wintercoats.dm"
 #include "ModularTegustation\tegu_cool_walls\34swallsgoon.dm"
+#include "ModularTegustation\tegu_cool_walls\34wallsbay.dm"
 #include "ModularTegustation\tegu_cool_walls\classicskyrat.dm"
 #include "ModularTegustation\tegu_cool_walls\wall_config.dm"
 #include "ModularTegustation\tegu_digitigrade\digi_lizard_tegu.dm"

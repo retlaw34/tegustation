@@ -1,17 +1,19 @@
 //Baystation, a server I haven't played on but they look cool. These were a pain in the ass to get workina dnd as of typing don't work.
 //These use the "3/4" perspective, which is used by goonstation, and looks like you are looking from above and at a angle.atom
 //soul level: low
-/*
+
 /turf/closed/wall
-	icon_state = "solid"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon_state = "wall"
+	icon = 'goon/icons/turf/bay-wall.dmi'
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+/*
 	var/list/wall_connections = list("0", "0", "0", "0")
 	var/list/other_connections = list("0", "0", "0", "0")
 	var/image/texture = null //EG: Concrete. Lets you texture a wall with one texture tile rather than making a new wall..every..single...time
 	var/texture_state = null
+*/
 	color = "#787878"
-
+/*
 /atom/proc/legacy_smooth() //janky stuff?
 	return
 
@@ -20,38 +22,38 @@
 	legacy_smooth()
 	update_connections()
 	update_icon()
-
+*/
 
 /turf/closed/wall/steel
 	color = "#787878"
 
 /turf/closed/wall/r_wall
-	icon_state = "reinf"
-	texture = "reinf_over"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+//	icon_state = "reinf"
+//	texture = "reinf_over"
+	icon = 'goon/icons/turf/bay-rwall.dmi'
 	color = "#787878"
 
 /turf/closed/wall/mineral
 	icon_state = "mineral"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/cult
 	icon_state = "cult"
 	color = "#4C4343"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/gold
 	color = "#FFD700"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 	icon_state = "metal"
 
 /turf/closed/wall/mineral/silver
 	icon_state = "metal"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/snow
 	icon_state = "metal"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 /*
 /turf/closed/wall/mineral/copper
 	icon_state = "metal"
@@ -61,42 +63,84 @@
 /turf/closed/wall/mineral/diamond
 	icon_state = "metal"
 	color = "#b9f2ff"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/sandstone
 	icon_state = "metal"
 	color = "#AA9F91"
-	icon = 'goon/icons/turf/wall_masks.dmi'
-	texture_state = "concrete"
-
+	icon = 'goon/icons/turf/bay-wall.dmi'
 /turf/closed/wall/mineral/bananium
 	icon_state = "metal"
 	color = "#FFFF33"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/uranium
 	icon_state = "metal"
 	color = "#228B22"
-	icon = 'goon/icons/turf/wall_masks.dmi'
-	texture_state = "concrete"
-
+	icon = 'goon/icons/turf/bay-wall.dmi'
 /turf/closed/wall/mineral/plasma
 	icon_state = "metal"
 	color = "#EE82EE"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/iron
 	icon_state = "metal"
 	color = "#808080"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 
 /turf/closed/wall/mineral/wood
 	icon_state = "wood"
-	icon = 'goon/icons/turf/wall_masks.dmi'
+	icon = 'goon/icons/turf/bay-wall.dmi'
 	color = "#654D31"
 
-//BAY WALLS, i hope
+/turf/closed/wall/mineral/titanium
+	color = null
 
+/turf/closed/wall/mineral/plastitanium
+	color = null
+
+/obj/machinery/firealarm
+	icon = 'ModularTegustation/Teguicons/skyrat_cool_walls/firealarm.dmi'
+	alarm_sound = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/alarm.ogg'
+
+/obj/machinery/door/firedoor/open()
+	playsound(loc, door_open_sound, 90, TRUE)
+	. = ..()
+
+/obj/machinery/door/firedoor/close()
+	playsound(loc, door_close_sound, 90, TRUE)
+	. = ..()
+
+/obj/machinery/door/firedoor
+	icon = 'goon/icons/obj/firedoor.dmi'
+	var/door_open_sound = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/skyrat_airlock_sounds/firedoor_open.ogg'
+	var/door_close_sound = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/skyrat_airlock_sounds/firedoor_open.ogg'
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	layer = 4
+
+/obj/machinery/door/firedoor/heavy
+	icon = 'goon/icons/obj/firedoor.dmi'
+	var/door_open_sound = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/skyrat_airlock_sounds/open_force'
+	var/door_close_sound = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/skyrat_airlock_sounds/close_force.ogg'
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	layer = 4
+
+/obj/machinery/door/firedoor/Initialize()
+	. = ..()
+	set_smooth_dir()
+
+
+//BAY WALLS, i hope
+/*
+/turf/open/floor
+	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi'
+*/
+
+/*
 #define CAN_SMOOTH_FULL 1 //Able to fully smooth, no "connection" states.
 #define CAN_SMOOTH_HALF 2 //Able to half smooth, will spawn "connector" states.
 
@@ -165,6 +209,8 @@
 #undef CORNER_COUNTERCLOCKWISE
 #undef CORNER_DIAGONAL
 #undef CORNER_CLOCKWISE
+*/
+
 
 // bay walls end
-*/
+

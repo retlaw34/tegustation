@@ -3,6 +3,7 @@
 //soul level: medium
 
 //WALLS todo: more icon states/learn how the fuck concrete works
+/*
 /turf/closed/wall
 	icon = 'goon/icons/turf/walls_supernorn.dmi'
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
@@ -10,7 +11,7 @@
 /turf/closed/wall/r_wall
 	icon = 'goon/icons/turf/walls_supernorn_reinforced.dmi'
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
-
+*/
 // WINDOWS todo: see above
 /obj/structure/window/fulltile
 	icon = 'goon/icons/obj/window_pyro.dmi'
@@ -28,14 +29,13 @@
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
 
 
-/*
 /obj/structure/window/reinforced/tinted/fulltile
 	icon = 'goon/icons/obj/window_pyro.dmi'
 	color = "#94bbd13b"
 	icon_state = "window"
 	alpha = 200
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
-*/
+
 
 /obj/structure/window/plasma/fulltile
 	icon = 'goon/icons/obj/window_pyro.dmi'
@@ -63,7 +63,7 @@
 	icon_state = "closed"
 	overlays_file = 'goon/icons/obj/airlocks/overlays.dmi'
 	doorOpen = 'goon/sound/machinery/sound_machines_airlock_swoosh_temp.ogg'
-	doorClose = 'goon/sound/machinery/sound_machines_airlock_swoosh_temp.ogg'
+	doorClose = 'ModularTegustation/Tegusounds/tegu_cool_airlocks/skyrat_airlock_sounds/close.ogg'
 	doorDeni = 'goon/sound/machinery/sound_machines_airlock_deny.ogg' // i'm thinkin' Deni's
 
 /obj/machinery/door/airlock/Initialize()
@@ -93,55 +93,7 @@ odir = EAST / WEST. We need it to face forwards so you can get through
 
 */
 
-/obj/machinery/door/airlock/proc/set_smooth_dir() //I fucking hate this code and so should you :)
-//	for(var/atom/obstacle in view(1, src)) //Ghetto ass icon smooth
-	var/odir = 0
-	var/atom/found = null
-	var/turf/north = get_turf(get_step(src,NORTH))
-	if(north.density)
-		found = north
-		odir = NORTH
-	var/turf/south = get_turf(get_step(src,SOUTH))
-	if(south.density)
-		found = south
-		odir = SOUTH
-	var/turf/east = get_turf(get_step(src,EAST))
-	if(east.density)
-		found = east
-		odir = EAST
-	var/turf/west = get_turf(get_step(src,WEST))
-	if(west.density)
-		found = west
-		odir = WEST
-	if(!found)
-		for(var/atom/foo in get_step(src,NORTH))
-			if(foo?.density)
-				found = foo
-				odir = NORTH
-				break
-		for(var/atom/foo in get_step(src,SOUTH))
-			if(foo?.density)
-				found = foo
-				odir = SOUTH
-				break
-		for(var/atom/foo in get_step(src,EAST))
-			if(foo?.density)
-				found = foo
-				odir = EAST
-				break
-		for(var/atom/foo in get_step(src,WEST))
-			if(foo?.density)
-				found = foo
-				odir = WEST
-				break
-	if(odir == NORTH || odir == SOUTH)
-		dir = EAST
-	else
-		dir = SOUTH
-	return odir
-
-//same as above
-/obj/machinery/door/poddoor/proc/set_smooth_dir()
+/obj/machinery/door/proc/set_smooth_dir() //I fucking hate this code and so should you :)
 //	for(var/atom/obstacle in view(1, src)) //Ghetto ass icon smooth
 	var/odir = 0
 	var/atom/found = null
