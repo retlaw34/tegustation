@@ -34,6 +34,10 @@ map icebox
 	votable
 endmap
 
+map galaxystation
+	votable
+endmap
+
 map packedstation
 	maxplayers 20
 	votable
