@@ -8234,10 +8234,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics)
-"anK" = (
-/obj/structure/table,
-/turf/open/floor/plasteel,
-/area/hydroponics)
 "anL" = (
 /obj/structure/table,
 /obj/item/wrench,
@@ -8445,6 +8441,8 @@
 "aog" = (
 /obj/structure/table,
 /obj/effect/landmark/event_spawn,
+/obj/machinery/smartfridge/disks,
+/obj/item/storage/box/stockparts/dna_manip_disks,
 /turf/open/floor/plasteel,
 /area/hydroponics)
 "aoh" = (
@@ -14474,6 +14472,11 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/storage/primary)
+"eHF" = (
+/obj/structure/table,
+/obj/machinery/plantgenes,
+/turf/open/floor/plasteel,
+/area/hydroponics)
 "eIk" = (
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
@@ -16272,12 +16275,6 @@
 /turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
 "jmJ" = (
-/obj/machinery/door/window/southleft{
-	req_access_txt = "28"
-	},
-/obj/machinery/door/window/northright{
-	req_access_txt = "35"
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/machinery/biogenerator,
@@ -55306,7 +55303,7 @@ uFj
 aKZ
 amC
 anm
-anK
+anL
 aof
 aoB
 itx
@@ -55563,7 +55560,7 @@ uFj
 sfJ
 amC
 ann
-anL
+eHF
 aog
 aoC
 aXZ
