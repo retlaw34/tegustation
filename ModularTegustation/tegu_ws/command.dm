@@ -32,10 +32,13 @@
 
 //lockers
 
-/obj/structure/closet/secure_closet/captains/ws
+/obj/structure/closet/secure_closet/captains_ws
 	icon = 'ModularTegustation/Teguicons/closet.dmi'
+	name = "\proper captain's locker"
+	req_access = list(ACCESS_CAPTAIN)
+	icon_state = "cap"
 
-/obj/structure/closet/secure_closet/captains/ws/PopulateContents()
+/obj/structure/closet/secure_closet/captains_ws/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
 	new /obj/item/storage/backpack/captain(src)
@@ -66,10 +69,13 @@
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/captain(src)
 
-/obj/structure/closet/secure_closet/hop/ws
+/obj/structure/closet/secure_closet/hop_ws
 	icon = 'ModularTegustation/Teguicons/closet.dmi'
+	name = "\proper head of personnel's locker"
+	req_access = list(ACCESS_HOP)
+	icon_state = "hop"
 
-/obj/structure/closet/secure_closet/hop/ws/PopulateContents()
+/obj/structure/closet/secure_closet/hop_ws/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/storage/lockbox/medal/service(src)
@@ -92,3 +98,16 @@
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/storage/photo_album/hop(src)
 	new /obj/item/storage/lockbox/medal/hop(src)
+
+//outfits
+
+/datum/outfit/job/hop/ws
+	name = "Captain (White Sands)"
+	uniform =  /obj/item/clothing/under/rank/civilian/head_of_personnel/ws
+	head = /obj/item/clothing/head/hopcap/ws
+
+/datum/outfit/job/captain/ws
+	name = "Captain (White Sands)"
+	gloves = /obj/item/clothing/gloves/color/captain/ws
+	uniform =  /obj/item/clothing/under/rank/captain/ws
+	head = /obj/item/clothing/head/caphat/ws

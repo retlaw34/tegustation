@@ -16254,7 +16254,7 @@
 "Vb" = (
 /obj/structure/table/wood,
 /obj/item/key{
-	!INVALID_VAR! = list("shoots");
+	!INVALID_VAR! = null;
 	desc = "You are quite positive there has never been a gun in your office, and never will be. Frankly, the notion strikes you as reckless and foolhardy.";
 	name = "gun"
 	},
